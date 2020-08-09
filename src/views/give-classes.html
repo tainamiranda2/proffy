@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma platafrom de estudos online.</title>
+    <link rel="stylesheet" href="../css/style.css" >
+    <link rel="stylesheet" href="../css/partials/page-give-classes.css">
+    <link rel="stylesheet" href="../css/partials/header.css">
+    <link rel="stylesheet" href="../css/partials/fomrs.css">
+
+   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+   <script src="/js/addField.js" defer></script>
+</head>
+<body id="page-give-classes">
+
+    <div id="container">
+
+    <header class="hearder-page">
+
+        <div class="top-bar-container">
+            <a href="./">
+            <img src="/images/icons/back.svg" alt="Voltar">
+            </a>
+            <img src="/images/logo.svg" alt="proffy">
+        </div>
+    
+        <div class="hearder-content">
+  <strong>Que incrivel que voce quer dar aulas.</strong>
+       
+    
+<p>O primeiro passo é preencher o fromulario de incrição</p>
+        </div>
+        </header>
+
+<main>
+    <form action="" id="create-class">
+
+<fieldset>
+    <legend>Seus dados</legend>
+    <div class="input-block">
+        <label for="name" id="name">Nome completo</label>
+        <input name="name" id="name" required>
+    </div>
+    <div class="input-block">
+        <label for="avatar" >Link da sua foto<small>(comece com https://)</small></label>
+        <input name="avatar" id="avatar" type="url" required>
+    </div>
+    <div class="input-block">
+        <label for="whatszap">whatszap<small>(somente números)</small></label>
+        <input name="whatszap" id="whatszap" type="number" required>
+    </div>
+    <div class="textarea-block">
+        <label for="bio" >Biografia</label>
+        <textarea name="bio"- id="bio" required></textarea>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Sobre a aula</legend>
+    <div class="select-block">
+        <label for="subject" >Matéria</label>
+        <select name="subject" id="subject">
+
+    <option value=""> Selecione uma opção</option>
+      
+    {%for subject in subjects%}
+<option value= "{{loop.index}}" {{'selected' if fielters.subject == "loop.index"}}>{{subject}}</option>
+   {%endfor%}
+
+    </select>
+    <div class="input-block">
+        <label for="cost">custo da sua hora/aula
+            <small>(R$)</small>
+            <input name="cost" type="cost" id="cost" type="number" required>
+ 
+        </label>
+    </div>
+    </div>
+</fieldset>
+
+<fieldset id="schedule-item">
+    <legend>
+        Horarios disponiveis
+        <button type="submit" id="add-time">+ Novo horário</button>
+    </legend>
+    <div class="schedule-item">
+<div class="select-block">
+    <label for="weekday">Dia da semana</label>
+    <select name="weekday[]" id="weekday">
+       
+{%for weekday in weekdays%}
+<option value= "{{loop.index0}}">
+{{weekday}}
+</option>
+{%endfor%}
+  
+    </select>
+</div>
+<div class="input-block">
+<label for="time_from">Das</label>
+<input type="time" id="time_from" name="time_from[]" required>
+</div>
+
+<div class="input-block">
+    <label for="time_to">Até</label>
+    <input type="time" id="time_from" name="time_to[]" required>
+</div>
+    </div>
+
+    
+
+
+</fieldset>
+
+<footer>
+    <p>
+        <img src="/images/icons/warning.svg" alt="Aviso importnate">
+Importante! <br>
+Preencha todos os dados.
+    </p>
+    <button type="submit" form="create-class">Salvar cadastro</button>
+</footer>
+</main>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+:root{
+    --color-background: #F0F0F7;
+    --color-primary-lighter: #000;
+    --color-primary-light: #ddec08;
+    --color-primary: #d1c821;
+    --color-primary-dark: #db9d18;
+    --color-primary-darker: #dba613;
+    --color-secondary: #18475a;
+    --color-secondary-dark: #000;
+    --color-title-in-primary: #FFFFFF;
+    --color-text-in-primary: #D4C2FF;
+    --color-text-title: #ff7200;
+    --color-text-complement: #caa70a;
+    --color-text-base: #14120d;
+    --color-line-in-white: #b69b53;
+    --color-input-background: #bbd659;
+    --color-button-text: #14120d;
+    --color-box-base: #FFFFFF;
+    --color-box-footer: #FAFAFC;
+    --color-small-info: #0e0c14;
+    /*Tamanho da font*/
+    font-size: 60%; /*Controle das medidas ems*/
+}
+
+body{
+    background-color: var(--color-background);
+    display: flex; /*elementos um ao lado do outro*/
+    align-items: center;/*alinhamento central*/
+    justify-content: center; /*justificar o alinhament0 no centro*/
+
+}
+html, body{
+   height: 100%;
+   width: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*tamanho do conteúdo*/
+
+body,
+ input,
+  button,
+  textarea{
+/*font: 500 1.6em;*/
+font-weight: 500;
+font-family: Poppins;
+font-size: 1.6em;
+color: var(--color-text-base);
+}
+
+/*adaptando a tela ao tamanho*/
+#container{
+    width: 90vw;
+    max-width: 700px;
+}
+@media (max-width: 699px){
+:root{
+    font-size: 40%;
+}
+}
+
+@media (min-width: 700px){
+    :root{
+        font-size: 62.5%;
+    }
+}
